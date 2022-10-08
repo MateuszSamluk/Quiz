@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="button_true">Prawda</string>
+    <string name="button_false">Fałsz</string>
+    <string name="button_next">Następne</string>
+    <string name="q1">2+2=4</string>
+    <string name="q2">Android 8 jest najnowszą wersą systemu Android</string>
+    <string name="q3">Trójkąt ma 4 boki</string>
+    <string name="q4">10*10=100</string>
+    <string name="q5">10-6=4</string>
+    <string name="correct_answer">Dobra odpowiedź</string>
+    <string name="incorrect_answer">Zła odpowiedź</string>
+</resources>
