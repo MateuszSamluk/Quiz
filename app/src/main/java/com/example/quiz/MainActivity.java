@@ -1,14 +1,19 @@
 package com.example.quiz;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "Zadanie1";
+    private static final String KEY_CURRENT_INDEX = "currentIndex";
     private Button trueButton;
     private Button falseButton;
     private Button nextButton;
@@ -37,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onCreate");
+        if(savedInstanceState != null){
+            currentIndex = savedInstanceState.getInt(KEY_CURRENT_INDEX);
+        }
         setContentView(R.layout.activity_main);
         trueButton = findViewById(R.id.true_button);
         falseButton = findViewById(R.id.false_button);
@@ -63,5 +72,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setNextQuestion();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "Wywołana została metoda cyklu życia: onDestroy");
+    }
+
+   @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+       Log.d(TAG, "Wywołana została metoda cyklu życia: onSaveInstanceState");
+       outState.putInt(KEY_CURRENT_INDEX, currentIndex);
     }
 }
