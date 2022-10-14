@@ -34,6 +34,12 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/propmt_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Podpowiedź"
+        android:paddingBottom="30dp"/>
+    <Button
         android:id="@+id/next_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
